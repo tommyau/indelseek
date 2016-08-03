@@ -27,12 +27,14 @@ my $skip_lowqual = 0;
 my $skip_lowdepth = 0;
 my $skip_lowaf = 0;
 my $max_samtools_depth = 500000; # overriding samtools depth default cap of 8000x depth
+my $max_distance = 5;
 GetOptions ("refseq=s" => \$refseq,
 	    "samtools=s" => \$samtools,
 	    "rawoutput" => \$rawoutput,
 	    "debug" => \$debug,
 	    "phredoffset=i" => \$phredoffset,
 	    "quality_threshold=i" => \$quality_threshold,
+	    "max_distance=i" => \$max_distance,
 	    "min_depth=i" => \$min_depth,
 	    "min_af=f" => \$min_af,
 	    "depth_bam=s" => \$depth_bam,
@@ -185,7 +187,6 @@ sub reconstruct_alignment {
     }
     my @cigar_cluster;
     # scan if there is cluster of mismatch between cigar_readseq and cigar_refseq
-    my $max_distance = 5;
     my $start = -1;
     my $end = -1 * $max_distance;
     

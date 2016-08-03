@@ -19,6 +19,7 @@ Detect complex indels from next-generation sequencing reads
 *Options*
 - **--refseq** _FILE_: indexed reference genome in FASTA format [ucsc.hg19.fasta]
 - **--samtools** _FILE_: path to samtools executable [samtools]
+- **--max_distance** _INT_: maximum distance of two variants to be considered together as a complex indel [5]
 - **--quality_threshold** _INT_: complex indels with mean read base quality score below _INT_ are marked _LowQual_ [20]
 - **--skip_lowqual**: skip _LowQual_ complex indel calls in output
 - **--min_depth** _INT_: complex indels with depth (forward and reverse reads with the complex indel) below _INT_ are marked _LowDepth_ [50]
@@ -31,7 +32,7 @@ Detect complex indels from next-generation sequencing reads
 Examples
 ```bash
 # Any complex indel in KIT exon 8 with minimum allele frequency 2%?
-# (Actual output of sample 9 described in manuscript)
+# (Actual output of sample 10 described in manuscript)
 samtools view sample.bam chr4:55589744-55589911 | ./indelseek.pl --skip_lowqual --skip_lowdepth --skip_lowaf --min_af 0.02 --depth_bam sample.bam | tee sample.complexindel.vcf
 ##fileformat=VCFv4.1
 ##source=INDELseek
