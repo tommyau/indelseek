@@ -4,6 +4,9 @@ Detect complex indels from next-generation sequencing reads
 
 [Download latest version in a ZIP package](https://github.com/tommyau/indelseek/zipball/master)
 
+INDELseek algorithm (Au _et al._ _BMC Genomics_ 2017 18:16 [Figure 1](http://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3449-9#Fig1))
+![INDELseek algorithm](http://static-content.springer.com/image/art%3A10.1186%2Fs12864-016-3449-9/MediaObjects/12864_2016_3449_Fig1_HTML.gif)
+
 ### Dependencies, as tested on 64-bit CentOS 5.5
 * [SAMtools](http://www.htslib.org/download/) version at least 1.3 ([to support depth >8000x](https://github.com/samtools/samtools/pull/322))
 * [GNU Parallel](http://www.gnu.org/software/parallel/) _(optional but recommended)_ to analyze multiple BAM files and/or genomic regions
@@ -54,9 +57,14 @@ chr4	55589769	.	TTACGACA	CTCCT	35.68	PASS	DP2=151,125;QS2=37.61,33.35;AF=0.021;R
 parallel --tag "samtools view {1} {2} | indelseek.pl --skip_lowqual --skip_lowdepth --skip_lowaf --min_af 0.02 --depth_bam {1}" ::: *.bam :::: region.list | grep -v "#" > complexindel.tab
 ```
 
-Citation
+Citations
 --------
-Au CH, Leung AYH, Kwong A, Chan TL and Ma ESK, 2016. _(submitted)_
+### INDELseek algorithm
+* Au CH, Leung AYH, Kwong A, Chan TL and Ma ESK, 2017. [INDELseek: detection of complex insertions and deletions from next-generation sequencing data](http://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3449-9). _BMC Genomics_ 18:16 (doi:10.1186/s12864-016-3449-9)
+
+### Example studies that used INDELseek
+* Cher CY, _et al._, 2016. [Next-generation sequencing with a myeloid gene panel in core-binding factor AML showed _KIT_ activation loop and _TET2_ mutations predictive of outcome](http://www.nature.com/bcj/journal/v6/n7/full/bcj201651a.html). _Blood Cancer Journal_ 6:e442 (doi:10.1038/bcj.2016.51)
+* Lam SSY, _et al._, 2016. [Homoharringtonine (omacetaxine mepesuccinate) as an adjunct for _FLT3_-ITD acute myeloid leukemia](http://stm.sciencemag.org/content/8/359/359ra129). _Science Translational Medicine_ 8:359ra129 (doi:10.1126/scitranslmed.aaf3735)
 
 License
 -------
