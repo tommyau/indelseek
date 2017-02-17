@@ -1,8 +1,11 @@
 #!/usr/bin/env perl
 # Chun Hang AU (chau@hksh.com) (https://github.com/tommyau/indelseek)
 # INDELseek - Detect complex indels from next-generation sequencing reads
+# 
 # Example usage:
-# samtools view sample.bam chr4:55589744-55589911 | ./complexindel.pl
+#  samtools view sample.bam chr4:55589744-55589911 | ./indelseek.pl
+# 
+# Please refer to README.md or https://github.com/tommyau/indelseek for further documentation
 use strict;
 use warnings;
 use Getopt::Long;
