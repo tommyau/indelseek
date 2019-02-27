@@ -65,7 +65,3 @@ Citations
 ### Example studies that used INDELseek
 * Cher CY, _et al._, 2016. [Next-generation sequencing with a myeloid gene panel in core-binding factor AML showed _KIT_ activation loop and _TET2_ mutations predictive of outcome](http://www.nature.com/bcj/journal/v6/n7/full/bcj201651a.html). _Blood Cancer Journal_ 6:e442 (doi:10.1038/bcj.2016.51)
 * Lam SSY, _et al._, 2016. [Homoharringtonine (omacetaxine mepesuccinate) as an adjunct for _FLT3_-ITD acute myeloid leukemia](http://stm.sciencemag.org/content/8/359/359ra129). _Science Translational Medicine_ 8:359ra129 (doi:10.1126/scitranslmed.aaf3735)
-
-License
--------
-Source code released for non-commercial use only. For commercial use and other licensing enquiries, please contact Dr. Edmond S.K. Ma (<eskma@hksh.com>), Hong Kong Sanatorium and Hospital.
